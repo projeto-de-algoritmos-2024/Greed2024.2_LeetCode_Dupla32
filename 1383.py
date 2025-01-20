@@ -10,9 +10,10 @@ class Solution:
         velocidade_total = 0
         resultado = 0
 
-        for eficiencia, velocidade in lista:
+        for velocidade, eficiencia in lista:
             if len(heap) == k:
-                velocidade_total -= heapq.heappop(heap)
+                velocidade_total -= heapq.heappop(heap)  
+            
             heapq.heappush(heap, velocidade)
             velocidade_total += velocidade
             resultado = max(resultado, velocidade_total * eficiencia)
