@@ -19,10 +19,18 @@ Este projeto consiste na resolução de questões da plataforma LeetCode variand
 | -------- | --------------------------------------------------------------------------------------------------------------------- | -------------------- |
 | 1029     | [Two City Scheduling](https://leetcode.com/problems/two-city-scheduling/description/)                                 | Médio                |
 | 2136     | [Earliest Possible Day of Full Bloom](https://leetcode.com/problems/earliest-possible-day-of-full-bloom/description/) | Difícil              |
+| 1383     | [Maximum Performance of a Team](https://leetcode.com/problems/maximum-performance-of-a-team/description/)             | Difícil              |
 
 ## Screenshots
+
+### Two City Scheduling
+![Print 1029](/img/1029.png)
+
 ### Earliest Possible Day of Full Bloom
 ![Print 2136](/img/2136.png)
+
+### Maximum Performance of a Team
+![Print 1338](/img/1338.png)
 
 ## Linguagem Utilizada
 
