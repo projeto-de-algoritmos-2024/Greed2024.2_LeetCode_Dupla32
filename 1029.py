@@ -1,15 +1,12 @@
 class Solution:
     def twoCitySchedCost(self, costs: List[List[int]]) -> int:
         soma = 0
-        costs.sort(key=lambda x: x[0] )
-        tamanho = len(costs)/ 2
-        tamanho_a = 0
+        costs.sort(key=lambda x: x[0] - x[1])
+        tamanho = len(costs) // 2
 
-        for n in costs:
-            if n[0] <= n[1] or tamanho_a < tamanho:
-                tamanho_a += 1
-                soma += n[0]
-            else:
-                soma += n[1]
+        for i in range(tamanho):
+            soma += costs[i][0]
+            soma += costs[tamanho + i][1]
+
 
         return soma
