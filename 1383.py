@@ -2,15 +2,19 @@ class Solution:
     def maxPerformance(self, n: int, speed: List[int], efficiency: List[int], k: int) -> int:
         lista = []
         for i in range(n):
-            lista.append([ speed[i], efficiency[i]])
+            lista.append([speed[i], efficiency[i]])
         
-        lista.sort(key = lambda x: x[0] * x[1], reverse = True)
+        lista.sort(key = lambda x: x[1], reverse = True)
 
+        heap = []
         velocidade_total = 0
-        eficiencia_total = float("inf")
+        resultado = 0
 
-        for j in range(k):
-            velocidade_total += lista[j][0]
-            eficiencia_total = min(eficiencia_total, lista[j][1])
-        
-        return velocidade_total * eficiencia_total
+        for eficiencia, velocidade in lista:
+            if len(heap) == k:
+                velocidade_total -= heapq.heappop(heap)
+            heapq.heappush(heap, velocidade)
+            velocidade_total += velocidade
+            resultado = max(resultado, velocidade_total * eficiencia)
+
+        return resultado % (10**9 + 7)
